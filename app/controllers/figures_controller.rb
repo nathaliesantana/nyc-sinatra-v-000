@@ -26,18 +26,18 @@ class FiguresController < ApplicationController
     redirect to "/figures/#{@figure.id}"
   end
 
-  # get'/figures/:id/edit' do
-  #   @figure = Figure.find_by_id(params[:id])
-  #
-  #   erb:'figures/edit'
-  # end
-  #
-  # patch '/figures/:id' do
-  #   @figure = Figure.find_by_id(params[:id])
-  #   @figure.name = params[:name]
-  #   @figure.year_completed = params[:year_completed]
-  #   @figure.save
-  #
-  #   redirect"/figures/#{@figure.id}"
-  # end
+  get'/figures/:id/edit' do
+    @figure = Figure.find_by_id(params[:id])
+
+    erb:'figures/edit'
+  end
+
+  patch '/figures/:id' do
+    @figure = Figure.find_by_id(params[:id])
+    @figure.name = params[:name]
+    #@figure.year_completed = params[:year_completed]
+    @figure.save
+
+    redirect"/figures/#{@figure.id}"
+  end
 end
