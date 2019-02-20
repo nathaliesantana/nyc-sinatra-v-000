@@ -41,7 +41,7 @@ class FiguresController < ApplicationController
    end
 
    unless params[:landmark][:name].empty?
-     @figure.landmarks << Landmark.create(params[:new_landmark])
+     @figure.landmarks << Landmark.create(params[:landmark][:name])
    end
 
    @figure.save
