@@ -6,16 +6,14 @@
   <lable>Name</label>
   <input type="text" id="figure_name" name="figure[name]" value="<%=@figure.name%>"><br>
 
-
   <h4>Titles</h4>
     <% Title.all.each do |title| %>
       <label><%= title.name %></label>
       <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids][]" value="<%= title.id %>" <%='checked' if @figure.titles.include?(title) %>>
-
     <% end %>
+
  <h4>Add New Title:</h4>
   <input type="text" id="new_title" name="title[name]">
-
 
   <h4>Landmarks</h4>
     <% Landmark.all.each do |landmark| %>
