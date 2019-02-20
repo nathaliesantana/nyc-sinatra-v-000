@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../config/environment'
 
 describe FiguresController do
   before do
