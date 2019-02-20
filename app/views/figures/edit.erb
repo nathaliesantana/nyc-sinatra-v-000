@@ -3,12 +3,12 @@
 <form action="/figures/<%= @figure.id %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
   <lable>Name</label>
-    <input type="text" id="figure_name" name="figure[name]"><br></br>
+    <input type="text" id="figure_name" name="figure[name]" value="<%=@figure.name%>"><br></br>
 
   <h4>Titles</h4>
     <% Title.all.each do |title| %>
       <label><%= title.name %></label>
-      <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids][]" value="<%= title.id %>"><br>
+      <input type="checkbox" id="title_<%=title.id%>" name="figure[title_ids][]" value="<%= title.id %>" <%='checked' if @figure.title.include?(title) %>><br>
 
     <% end %>
  <h4>Create New Title:</h4>
