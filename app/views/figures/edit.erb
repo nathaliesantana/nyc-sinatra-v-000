@@ -22,7 +22,12 @@
         <label><%= landmark.name %></label>
         <input type="checkbox" id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]" value="<%= landmark.id %>"><br>
       <% end %>
-   
+
+      <h4>Edit Landmark:</h4>
+      <label>New Name:</label>
+       <input type="text" id="new_landmark" name="landmark[name]" value="<%= @figure.landmark%>">
+
+
 
   <br>
   <input type="submit" value="Edit Figure">
